@@ -1,5 +1,5 @@
-﻿using ASP.NETCORE6.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using MyApp.Models;
 using System.Diagnostics;
 
 namespace ASP.NETCORE6.Controllers

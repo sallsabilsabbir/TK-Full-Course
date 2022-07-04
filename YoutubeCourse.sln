@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASP.NETCORE6", "ASP.NETCORE6\ASP.NETCORE6.csproj", "{7D5D2E72-87D6-4070-B3DA-8135A837098D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASP.NETCORE6", "ASP.NETCORE6\ASP.NETCORE6.csproj", "{7D5D2E72-87D6-4070-B3DA-8135A837098D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Models", "MyApp.Models\MyApp.Models.csproj", "{76CA2B49-F6D4-46EB-A0CC-FAF9D61703C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.DataAccessLayer", "MyApp.DataAccessLayer\MyApp.DataAccessLayer.csproj", "{99437094-2039-468D-B743-07BD57D9BADA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{7D5D2E72-87D6-4070-B3DA-8135A837098D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D5D2E72-87D6-4070-B3DA-8135A837098D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D5D2E72-87D6-4070-B3DA-8135A837098D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76CA2B49-F6D4-46EB-A0CC-FAF9D61703C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76CA2B49-F6D4-46EB-A0CC-FAF9D61703C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76CA2B49-F6D4-46EB-A0CC-FAF9D61703C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76CA2B49-F6D4-46EB-A0CC-FAF9D61703C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99437094-2039-468D-B743-07BD57D9BADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99437094-2039-468D-B743-07BD57D9BADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99437094-2039-468D-B743-07BD57D9BADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99437094-2039-468D-B743-07BD57D9BADA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,7 +1,9 @@
-﻿using ASP.NETCORE6.Models;
-using Microsoft.EntityFrameworkCore;
+﻿
 
-namespace ASP.NETCORE6.Data
+using Microsoft.EntityFrameworkCore;
+using MyApp.Models;
+
+namespace MyApp.DataAccessLayer
 {
     public class ApplicationDbContext : DbContext
     {

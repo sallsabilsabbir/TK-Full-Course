@@ -1,6 +1,6 @@
-﻿using ASP.NETCORE6.Data;
-using ASP.NETCORE6.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using MyApp.DataAccessLayer;
+using MyApp.Models;
 
 namespace ASP.NETCORE6.Controllers
 {

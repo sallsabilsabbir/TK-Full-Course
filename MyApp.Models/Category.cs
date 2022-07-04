@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ASP.NETCORE6.Models
+namespace MyApp.Models
 {
     public class Category
     {
