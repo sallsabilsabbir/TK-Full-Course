@@ -1,21 +1,28 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿ using Microsoft.AspNetCore.Mvc;
 using MyApp.DataAccessLayer;
+using MyApp.DataAccessLayer.Infrastructure.IRepository;
 using MyApp.Models;
 
 namespace ASP.NETCORE6.Controllers
 {
     public class CategoryController : Controller
     {
-        private readonly ApplicationDbContext _context;
-
+       /* private readonly ApplicationDbContext _context;
         public CategoryController(ApplicationDbContext context)
         {
             _context = context;
+        }*/
+
+        private IUnitofWork _unitofWork;
+
+        public CategoryController(IUnitofWork unitofWork)
+        {
+            _unitofWork = unitofWork;
         }
 
         public IActionResult Index()
         {
-            IEnumerable<Category> categories = _context.Categories;
+            IEnumerable<Category> categories = _unitofWork.Category.GetAll();
             return View(categories);
         }
 
@@ -33,8 +40,8 @@ namespace ASP.NETCORE6.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Categories.Add(category);
-                _context.SaveChanges();
+                _unitofWork.Category.Add(category);
+                _unitofWork.Save();
 
                 TempData["success"] = "Created done Successfuly!";
 
@@ -47,12 +54,12 @@ namespace ASP.NETCORE6.Controllers
         [HttpGet]
         public IActionResult Edit(int? id)
         {
-            if(id == null || id==0)
+            if (id == null || id == 0)
             {
                 return NotFound();
             }
-            var category = _context.Categories.Find(id);
-            if(category == null)
+            var category = _unitofWork.Category.GetT(x=>x.id==id);
+            if (category == null)
             {
                 return NotFound();
             }
@@ -65,8 +72,8 @@ namespace ASP.NETCORE6.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Categories.Update(category);
-                _context.SaveChanges();
+                _unitofWork.Category.Update(category);
+                _unitofWork.Save();
 
                 TempData["success"] = "Updateed Done Successfuly!";
 
@@ -80,12 +87,12 @@ namespace ASP.NETCORE6.Controllers
         [HttpGet]
         public IActionResult Delete(int? id)
         {
-            if(id == null || id==0)
+            if (id == null || id == 0)
             {
                 return NotFound();
             }
-            var category = _context.Categories.Find(id);
-            if(category == null)
+            var category = _unitofWork.Category.GetT(x => x.id == id); ;
+            if (category == null)
             {
                 return NotFound();
             }
@@ -96,9 +103,9 @@ namespace ASP.NETCORE6.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteData(int? id)
         {
-            var category = _context.Categories.Find(id);
-            _context.Categories.Remove(category);
-            _context.SaveChanges();
+            var category = _unitofWork.Category.GetT(x => x.id == id); ;
+            _unitofWork.Category.Delete(category);
+            _unitofWork.Save();
 
             TempData["success"] = "Delete Done Successfuly!";
 

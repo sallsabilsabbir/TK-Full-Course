@@ -6,7 +6,7 @@ using MyApp.DataAccessLayer;
 
 #nullable disable
 
-namespace ASP.NETCORE6.Migrations
+namespace MyApp.DataAccessLayer.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20220629092424_category")]
