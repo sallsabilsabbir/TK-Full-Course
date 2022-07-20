@@ -2,7 +2,7 @@
 using MyApp.Models;
 using System.Diagnostics;
 
-namespace ASP.NETCORE6.Controllers
+namespace ASP.NETCORE6.Areas.Customer.Controllers
 {
     public class HomeController : Controller
     {

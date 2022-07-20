@@ -1,17 +1,17 @@
-﻿ using Microsoft.AspNetCore.Mvc;
-using MyApp.DataAccessLayer;
+﻿using Microsoft.AspNetCore.Mvc;
 using MyApp.DataAccessLayer.Infrastructure.IRepository;
 using MyApp.Models;
 
-namespace ASP.NETCORE6.Controllers
+namespace ASP.NETCORE6.Areas.Admin.Controllers
 {
     public class CategoryController : Controller
     {
-       /* private readonly ApplicationDbContext _context;
-        public CategoryController(ApplicationDbContext context)
-        {
-            _context = context;
-        }*/
+        
+        /* private readonly ApplicationDbContext _context;
+         public CategoryController(ApplicationDbContext context)
+         {
+             _context = context;
+         }*/
 
         private IUnitofWork _unitofWork;
 
@@ -58,7 +58,7 @@ namespace ASP.NETCORE6.Controllers
             {
                 return NotFound();
             }
-            var category = _unitofWork.Category.GetT(x=>x.id==id);
+            var category = _unitofWork.Category.GetT(x => x.id == id);
             if (category == null)
             {
                 return NotFound();
